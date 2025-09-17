@@ -140,6 +140,239 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/%E8%BD%A6%E7%89%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ccparrow">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E8%BD%A6%E7%89%8C/" class="post-title-link" itemprop="url">冀A新能源车牌生成器</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-09-17 17:19:18 / 修改时间：17:20:26" itemprop="dateCreated datePublished" datetime="2025-09-17T17:19:18+08:00">2025-09-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">技术工具</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <div style="text-align: center;">
+  <div class="license-plate" id="licensePlate" onclick="generateNewEnergyPlate()" style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #ffffff, #008000);
+    color: #000000;
+    width: 90%;
+    max-width: 500px;
+    height: 22vh;
+    min-height: 120px;
+    border-radius: 10px;
+    font-size: 8vw;
+    font-weight: 900;
+    letter-spacing: 0.4vw;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), inset 0 0 15px rgba(255, 255, 255, 0.3);
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+    border: 3px solid rgba(0, 0, 0, 0.25);
+    font-family: Arial, '黑体', sans-serif;
+    line-height: 1;
+    padding: 0 5px;
+    margin: 15px auto;
+    position: relative;
+  ">冀A D01234</div>
+
+  <p style="color: #666; margin: 15px 0; font-size: 16px;">点击车牌生成新号码</p>
+</div>
+
+<div style="
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 25px auto;
+  width: 90%;
+  max-width: 500px;
+  text-align: left;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+">
+  <h3 style="color: #2E7D32; margin-bottom: 15px; font-size: 18px; text-align: center;">新能源车牌规则</h3>
+  <p style="color: #333; margin-bottom: 8px; font-size: 14px; line-height: 1.5;">• 前缀固定：冀A（河北省石家庄市）</p>
+  <p style="color: #333; margin-bottom: 8px; font-size: 14px; line-height: 1.5;">• 第二位字母：D代表纯电动，F代表非纯电动</p>
+  <p style="color: #333; margin-bottom: 8px; font-size: 14px; line-height: 1.5;">• 后五位：随机数字组合</p>
+  <p style="color: #333; margin-bottom: 8px; font-size: 14px; line-height: 1.5;">• 格式：冀A + 空格 + D/F + 5位数字</p>
+</div>
+
+<script>
+  // 生成随机新能源车牌（固定冀A开头）
+  function generateNewEnergyPlate() {
+    // 固定使用"冀A"开头
+    const province = "冀";
+    const authority = "A";
+    
+    // 随机选择新能源类型（D或F）
+    const energyType = Math.random() > 0.5 ? 'D' : 'F';
+    
+    // 生成5位数字
+    let plateNumber = "";
+    for (let i = 0; i < 5; i++) {
+      plateNumber += "0123456789"[Math.floor(Math.random() * 10)];
+    }
+    
+    // 组合成完整车牌（格式：冀A D12345）
+    const fullPlate = province + authority + " " + energyType + plateNumber;
+    
+    // 更新页面显示
+    document.getElementById("licensePlate").textContent = fullPlate;
+    
+    return fullPlate;
+  }
+  
+  // 页面加载时自动生成一个车牌
+  window.onload = generateNewEnergyPlate;
+</script>
+
+<style>
+  @media (min-width: 600px) {
+    .license-plate {
+      font-size: 50px;
+      letter-spacing: 3px;
+    }
+  }
+  
+  .license-plate:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.4);
+  }
+  
+  .license-plate:active {
+    transform: scale(0.99);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35), inset 0 0 10px rgba(255, 255, 255, 0.25);
+  }
+</style><script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/UE5%20ProjectLauncher/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ccparrow">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/UE5%20ProjectLauncher/" class="post-title-link" itemprop="url">UE5 ProjectLauncher</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-09-01 15:50:54" itemprop="dateCreated datePublished" datetime="2025-09-01T15:50:54+08:00">2025-09-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-09-17 15:57:32" itemprop="dateModified" datetime="2025-09-17T15:57:32+08:00">2025-09-17</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a target="_blank" rel="noopener" href="https://dev.epicgames.com/documentation/zh-cn/unreal-engine/how-to-create-a-patch-in-unreal-engine?application_version=5.4">https://dev.epicgames.com/documentation/zh-cn/unreal-engine/how-to-create-a-patch-in-unreal-engine?application_version=5.4</a></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/UE5%20ProjectLauncher/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/ThreeJs/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -709,152 +942,11 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/Git/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ccparrow">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Git/" class="post-title-link" itemprop="url">Git</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-11-04 15:48:30" itemprop="dateCreated datePublished" datetime="2021-11-04T15:48:30+08:00">2021-11-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-12-03 16:38:54" itemprop="dateModified" datetime="2024-12-03T16:38:54+08:00">2024-12-03</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><a target="_blank" rel="noopener" href="https://git-scm.com/">https://git-scm.com/</a></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Git/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/Hexo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ccparrow">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Hexo/" class="post-title-link" itemprop="url">Hexo</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-11-01 15:50:54" itemprop="dateCreated datePublished" datetime="2021-11-01T15:50:54+08:00">2021-11-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-12-03 16:38:54" itemprop="dateModified" datetime="2024-12-03T16:38:54+08:00">2024-12-03</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">https://hexo.io/zh-cn/</a></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Hexo/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
 
 
 
@@ -921,9 +1013,17 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span>
       </div>
   </nav>
 </div>
@@ -961,7 +1061,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2024</span>
+  <span itemprop="copyrightYear">2025</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
