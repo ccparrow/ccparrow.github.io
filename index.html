@@ -163,10 +163,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2025-09-17 17:27:50 / 修改时间：17:32:11" itemprop="dateCreated datePublished" datetime="2025-09-17T17:27:50+08:00">2025-09-17</time>
+              <time title="创建时间：2025-09-17 17:27:50" itemprop="dateCreated datePublished" datetime="2025-09-17T17:27:50+08:00">2025-09-17</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-09-19 09:07:35" itemprop="dateModified" datetime="2025-09-19T09:07:35+08:00">2025-09-19</time>
+              </span>
 
           
 
@@ -183,29 +189,18 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>新能源车牌生成器</title>
+    <title>车牌</title>
     <style>
-        /* 基础样式设置 - 确保背景铺满整个页面 */
-        html, body {
-            height: 100%; /* 确保html和body元素高度占满视口 */
+        body {
             margin: 0;
             padding: 0;
-            font-family: 'Microsoft YaHei', sans-serif;
-        }
-        
-        body {
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            min-height: 100vh; /* 最小高度为整个视口高度 */
-            padding: 20px;
-            box-sizing: border-box; /* 确保padding不会导致溢出 */
-            background-color: #f0f0f0; /* 页面背景色 */
+            min-height: 100vh;
+            background-color: #f0f0f0;
         }
         
-        /* 车牌样式 - 48:14比例，单个车牌 */
         .license-plate {
             display: flex;
             justify-content: center;
@@ -214,73 +209,36 @@
             color: #000000;
             width: 480px;
             height: 140px;
-            border-radius: 8px;
-            font-size: 60px;
-            font-weight: 900;
+            font-size: 75px;
+            font-weight: 600;
             letter-spacing: 4px;
-            box-shadow: 
-                0 4px 15px rgba(0, 0, 0, 0.3),
-                inset 0 0 10px rgba(255, 255, 255, 0.2);
             text-align: center;
-            cursor: pointer;
-            transition: all 0.2s ease;
             user-select: none;
-            border: 2px solid rgba(0, 0, 0, 0.2);
             font-family: Arial, '黑体', sans-serif;
-            line-height: 1;
-            position: relative;
-        }
-        
-        /* 悬停效果 */
-        .license-plate:hover {
-            transform: scale(1.03);
-            box-shadow: 
-                0 6px 20px rgba(0, 0, 0, 0.4),
-                inset 0 0 15px rgba(255, 255, 255, 0.25);
-        }
-        
-        /* 点击效果 */
-        .license-plate:active {
-            transform: scale(0.99);
-            box-shadow: 
-                0 3px 12px rgba(0, 0, 0, 0.3),
-                inset 0 0 8px rgba(255, 255, 255, 0.15);
         }
     </style>
 </head>
 <body>
-    <!-- 车牌显示区域 -->
-    <div class="license-plate" id="licensePlate" onclick="generateNewEnergyPlate()">
-        冀A·D01234
+    <div class="license-plate" id="licensePlate" onclick="generateNewPlate()">
+        冀A D01234
     </div>
 
     <script>
-        // 新能源车牌生成函数
-        function generateNewEnergyPlate() {
-            // 固定使用"冀A"开头
+        function generateNewPlate() {
             const province = "冀";
             const authority = "A";
-            
-            // 随机选择能源类型（D代表纯电动，F代表非纯电动）
             const energyType = Math.random() > 0.5 ? 'D' : 'F';
             
-            // 生成5位随机数字
             let plateNumber = "";
             for (let i = 0; i < 5; i++) {
                 plateNumber += Math.floor(Math.random() * 10);
             }
             
-            // 组合成完整车牌（格式：冀A D12345）
             const fullPlate = province + authority + " " + energyType + plateNumber;
-            
-            // 更新页面显示
             document.getElementById("licensePlate").textContent = fullPlate;
-            
-            return fullPlate;
         }
         
-        // 页面加载时自动生成一个车牌
-        window.onload = generateNewEnergyPlate;
+        window.onload = generateNewPlate;
     </script>
 </body>
 </html><script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
