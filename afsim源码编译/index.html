@@ -23,14 +23,23 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":164,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#666","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="ccparrow">
-<meta property="og:url" content="http://example.com/archives/2021/12/index.html">
+  <meta name="description" content="afsim2.9源码编译">
+<meta property="og:type" content="article">
+<meta property="og:title" content="afsim源码编译">
+<meta property="og:url" content="http://example.com/afsim%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91/index.html">
 <meta property="og:site_name" content="ccparrow">
+<meta property="og:description" content="afsim2.9源码编译">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/afsim%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91/3-1.jpg">
+<meta property="og:image" content="http://example.com/afsim%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91/3-2.jpg">
+<meta property="og:image" content="http://example.com/afsim%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91/3-3.jpg">
+<meta property="og:image" content="http://example.com/afsim%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91/3-4.jpg">
+<meta property="article:published_time" content="2025-12-25T01:12:44.000Z">
+<meta property="article:modified_time" content="2026-01-23T08:42:42.656Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/afsim%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91/3-1.jpg">
 
-<link rel="canonical" href="http://example.com/archives/2021/12/">
+<link rel="canonical" href="http://example.com/afsim%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91/">
 
 
 <script id="page-configurations">
@@ -38,12 +47,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>归档 | ccparrow</title>
+  <title>afsim源码编译 | ccparrow</title>
   
 
 
@@ -134,50 +143,114 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 15 篇日志。 继续努力。</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/afsim%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ccparrow">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          afsim源码编译
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-12-25 09:12:44" itemprop="dateCreated datePublished" datetime="2025-12-25T09:12:44+08:00">2025-12-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2026-01-23 16:42:42" itemprop="dateModified" datetime="2026-01-23T16:42:42+08:00">2026-01-23</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
+        <p>afsim2.9源码编译</p>
+<span id="more"></span>
+
+
+
+<p>一、环境</p>
+<pre><code>Windows
+VisualStudio2022 -使用C++的桌面开发
+Cmake3.27.1
+afsim2.9
+</code></pre>
+<p>源码目录</p>
+<pre><code>bin
+demos
+documentation
+resources
+swdev
+tools
+training
+</code></pre>
+<p>二、CMake</p>
+<p>配置源码目录和输出路径<br><img src="/afsim%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91/3-1.jpg"></p>
+<p>配置并生成即可<br><img src="/afsim%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91/3-2.jpg"></p>
+<p>三、编译</p>
+<p>1、打开项目，在顶部的工具栏中，将解决方案的配置从 “Debug” 切换为 “Release”</p>
+<p>2、打开swdev\src\core\sensor_plot_lib\source\HorizontalMapFunction.cpp中1312行<br>   将resetiosflags修改为std::resetiosflags</p>
+<p>3、拷贝demos、documentation、resources、tools、training文件夹到build目录下</p>
+<p>4、右键ALL_BUILD生成<br>   此时可从VS启动项目<br>   <img src="/afsim%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91/3-3.jpg"></p>
+<p>5、右键INSTALL生成，成功后会在构建目录下生成wsf_install文件夹<br>   复制build\wsf_install\bin下的所有文件到build\Release，覆盖即可<br>   此时可直接点击build\Release下exe文件直接启动<br>   <img src="/afsim%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91/3-4.jpg"></p>
+<script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-12-01T15:50:54+08:00"
-              content="2021-12-01">
-          12-01
-        </time>
-      </div>
+      <footer class="post-footer">
 
-      <div class="post-title">
-          <a class="post-title-link" href="/%E7%83%AD%E6%9B%B4%E6%96%B0%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E/" itemprop="url">
-            <span itemprop="name">热更新操作说明</span>
-          </a>
-      </div>
+        
 
-    </header>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/map/" rel="prev" title="map">
+      <i class="fa fa-chevron-left"></i> map
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/afsim-observer%E6%8F%92%E4%BB%B6/" rel="next" title="afsim_observer插件">
+      afsim_observer插件 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
   </article>
-
-
-    </div>
-  </div>
   
   
-  
-
   
 
 
